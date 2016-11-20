@@ -1,5 +1,0 @@
-line = "word \t abcdsd \t lkjldfkj \t slfs \t sdfdsfs \t"
-sortedwords = sorted(line.split(), key=len)
-shortest = sortedwords[0]
-longest = sortedwords[-1]
-print shortest,longest
