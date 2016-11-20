@@ -1,0 +1,4 @@
+line = "ab \t cd \n ef \n"
+L = line.split()
+num = length(L)
+print num
