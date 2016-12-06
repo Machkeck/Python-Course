@@ -23,11 +23,11 @@ Lista Kroków:
 1)  wczytaj a,b,c
 2)  jeśli a = 0 i b = 0:
     2.1 jeśli c = 0
-        2.1.1   Wypisz:"Równanie jest nieokreślone. Rozwiązanie xeR i yeR"
-        2.1.2   Przejdz do pkt. 6
+        2.1.a   Wypisz:"Równanie jest nieokreślone. Rozwiązanie xeR i yeR"
+        2.1.b   Przejdz do pkt. 6
     2.2 else
-        2.2.1   Wypisz:"Równanie jest sprzeczne. Rozwiązanie xe(zbiór pusty),ye(zbiór pusty)"
-        2.2.2   Przejdz do pkt. 6
+        2.2.a   Wypisz:"Równanie jest sprzeczne. Rozwiązanie xe(zbiór pusty),ye(zbiór pusty)"
+        2.2.b   Przejdz do pkt. 6
 3)  jeśli a = 0
     3.1 Wypisz: "Rozwiązaniem jest prosta: xeR i y=-c/b"
     3.2 Przejdz do pkt. 6

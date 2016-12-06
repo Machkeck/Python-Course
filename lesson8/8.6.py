@@ -70,6 +70,6 @@ compare(5,6)
 compare(8,5)
 compare(3,3)
 compare(1,1)
-compare(88,33)
+compare(15,12)
 
 #Wniosek: wersja dynamiczna jest bardziej optymalna niz wersja rekurencyjna
