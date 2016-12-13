@@ -68,24 +68,33 @@ class SingleList:
             current = next
         self.head = prev
     	    
-	    	
-
-
+    def printList(self):
+        node = self.head
+        s = "["
+        while node.next != None:
+            s += str(node.data) + ', '
+            node = node.next
+        s += str(node.data) + ']'
+        print s
+    	   
 # Zastosowanie.
 alist = SingleList()
 alist.insert_head(11)         # [11]
 alist.insert_head(22)         # [22, 11]
 alist.insert_tail(33)         # [22, 11, 33]
-#alist.reverse()
+
+print "normal:"
 print "tail ",alist.tail.data
 print "head ",alist.head.data
-print "reverse:"
+print "length", alist.length
+alist.printList()
+
+print "\nreverse:"
 alist.reverse()
 print "tail ",alist.tail.data
 print "head ",alist.head.data
+print "length", alist.length
+alist.printList()
 
-
-print "length", alist.length  # odczyt atrybutu
-print "length", alist.count() # wykorzystujemy interfejs, lepsze
-while not alist.is_empty():   # kolejność 22, 11, 33
+while not alist.is_empty():
     print "remove head", alist.remove_head()
