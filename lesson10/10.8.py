@@ -87,8 +87,14 @@ class RandomQueue:
         return False
 
 q1 = RandomQueue()
-q1.put(34)
-print("H",q1.head.data)
+for i in range(10):
+    q1.put(i)
+for i in range(9):
+    print(q1.remove())
+    print("Head",q1.head.data,"Tail",q1.tail.data)
+    print("")
+
+'''print("H",q1.head.data)
 q1.put(352)
 print("T",q1.tail.data)
 q1.put(89)
@@ -101,5 +107,5 @@ print("H",q1.head.data)
 print (q1.remove())
 print (q1.remove())
 print (q1.remove())
-print (q1.remove())
+print (q1.remove())'''
 
