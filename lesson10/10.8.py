@@ -13,7 +13,7 @@ Rozwiazanie to wymaga wiecej pamieci bo wykorzystywany jest dodatkowy slownik, j
 potrzeba iteracji po wszystkich węzłach kolejki.
 Miejscem, które może spowolnić działanie programu, gdy operujemy na wiekszej ilosci danych, jest linijka:
 -----node_key = random.choice(self.pos_map.keys())-----,gdzie losujemy klucz ze slownika. Gdyby zastapic zwykły
-słownik słownikiem z biblioteki 'randomdict' można by wylosować klucz w stałym czasie.
+słownik słownikiem z biblioteki 'randomdict' (https://github.com/robtandy/randomdict) można by wylosować klucz w stałym czasie.
 
 """
 class Node:

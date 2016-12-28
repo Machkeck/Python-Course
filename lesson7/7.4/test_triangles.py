@@ -7,6 +7,7 @@ from points import Point
 class TestTriangle(unittest.TestCase):
     def setUp(self):
         self.t1 = Triangle(1,2,1,3,2,2)
+        self.t2 = Triangle(1,2,2,4,1,3)
 
     def test_init_tri(self):
         with self.assertRaises(ValueError):
@@ -16,10 +17,15 @@ class TestTriangle(unittest.TestCase):
 
     def test_eq_tri(self):
         self.assertEqual(self.t1 == Triangle(1,2,1,3,2,2), True)
+        self.assertEqual(self.t1 == Triangle(1, 2, 2, 2, 1, 3), True)
+        self.assertEqual(self.t1 == Triangle(1, 3, 1, 2, 2, 2), True)
+        self.assertEqual(self.t1 == Triangle(1, 3, 2, 2, 1, 2), True)
+        self.assertEqual(self.t1 == Triangle(2, 2, 1, 3, 1, 2), True)
+        self.assertEqual(self.t1 == Triangle(2, 2, 1, 2, 1, 3), True)
         self.assertEqual(self.t1 == Triangle(1,1,2,1,3,3), False)
 
     def test_center_tri(self):
-        self.assertEqual(self.t1.center(), Point(1,2))
+        self.assertEqual(self.t2.center(), Point(1,3.0))
         self.assertNotEqual(self.t1.center(), Point(1,1))
 
 

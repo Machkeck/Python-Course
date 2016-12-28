@@ -13,7 +13,7 @@ class Stack:
     def is_empty(self):
         return not self.items
 
-    def is_full(self):                  # nigdy nie jest pełny
+    def is_full(self):                  #
         if len(self.items) == self.size:
             return True
         else:

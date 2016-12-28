@@ -22,7 +22,12 @@ class Triangle:
         return "Triangle({}, {}, {}, {}, {}, {})".format(self.pt1.x, self.pt1.y,self.pt2.x, self.pt2.y,self.pt3.x, self.pt3.y)
 
     def __eq__(self, other):   # obsluga tr1 == tr2
-        if self.pt1 == other.pt1 and self.pt2 == other.pt2 and self.pt3 == other.pt3:
+        if self.pt1 == other.pt1 and self.pt2 == other.pt2 and self.pt3 == other.pt3 or \
+            self.pt1 == other.pt1 and self.pt2 == other.pt3 and self.pt3 == other.pt2 or \
+            self.pt1 == other.pt2 and self.pt2 == other.pt3 and self.pt3 == other.pt1 or \
+            self.pt1 == other.pt3 and self.pt2 == other.pt2 and self.pt3 == other.pt1 or \
+            self.pt1 == other.pt2 and self.pt2 == other.pt1 and self.pt3 == other.pt3 or \
+            self.pt1 == other.pt3 and self.pt2 == other.pt1 and self.pt3 == other.pt2:
             return True
         else:
             return False
@@ -31,7 +36,7 @@ class Triangle:
         return not self == other
 
     def center(self):          # zwraca srodek trojkata
-        return Point((self.pt1.x+self.pt2.x+self.pt3.x)/3,(self.pt1.y+self.pt2.y+self.pt3.y)/3)
+        return Point((self.pt1.x+self.pt2.x+self.pt3.x)/3,(self.pt1.y+self.pt2.y+self.pt3.y)/3.0)
 
     def area(self):            # pole powierzchni
         return (abs((self.pt2.x-self.pt1.x)*(self.pt3.y-self.pt1.y)-(self.pt2.y-self.pt1.y)*(self.pt3.x-self.pt1.x))/2.0)
@@ -58,9 +63,15 @@ class Triangle:
 
 
 '''t1 = Triangle(1,2,1,3,2,2)
+t2 = Triangle(1,2,2,2,1,3)
+t3 = Triangle(1,2,2,4,1,3)
+print(t1==t2)
 print(t1)
 print(t1.center())
-print(t1.area())
-print(t1.make4())
-print(t1.move(99,99))
-print(t1)'''
+print(t3.center())
+
+#print(t1.area())
+#print(t1.make4())
+#print(t1.move(99,99))
+#print(t1)
+'''
