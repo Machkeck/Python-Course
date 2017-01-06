@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module utils</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>utils</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmaciek%5Cdocuments%5Cdocuments%5Cuj%5Csem5%5Cpython%5Cpython-course%5Cproject%5Cutils.py">c:\users\maciek\documents\documents\uj\sem5\python\python-course\project\utils.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;contains&nbsp;utility&nbsp;functions&nbsp;for&nbsp;the&nbsp;wiki_path_finder.py&nbsp;program.&nbsp;To&nbsp;generate&nbsp;HTML&nbsp;documentation&nbsp;for&nbsp;this&nbsp;module&nbsp;issue&nbsp;the<br>
+command:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pydoc&nbsp;-w&nbsp;utils</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="requests.html">requests</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+<a href="tkinter.html">tkinter</a><br>
+</td><td width="25%" valign=top><a href="webbrowser.html">webbrowser</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="utils.html#Node">Node</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Node">class <strong>Node</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Node">Node</a>&nbsp;wraps&nbsp;the&nbsp;title&nbsp;of&nbsp;the&nbsp;wikipedia&nbsp;page&nbsp;adding&nbsp;parameters&nbsp;and&nbsp;functions&nbsp;for&nbsp;creating&nbsp;and&nbsp;searching&nbsp;graphs<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Node-__init__"><strong>__init__</strong></a>(self, name='', color='white', dist=9223372036854775807, parent=None)</dt><dd><tt>Constructs&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>&nbsp;of&nbsp;type&nbsp;<a href="#Node">Node</a>.<br>
+&nbsp;<br>
+:param&nbsp;name:&nbsp;The&nbsp;name&nbsp;of&nbsp;<a href="#Node">Node</a><br>
+:param&nbsp;color:&nbsp;The&nbsp;color&nbsp;of&nbsp;<a href="#Node">Node</a><br>
+:param&nbsp;dist:&nbsp;The&nbsp;distance&nbsp;from&nbsp;root<br>
+:param&nbsp;parent:&nbsp;The&nbsp;parent&nbsp;of&nbsp;the&nbsp;<a href="#Node">Node</a><br>
+:return:&nbsp;returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="Node-addAdjacentList"><strong>addAdjacentList</strong></a>(self, list)</dt><dd><tt>Adds&nbsp;new&nbsp;elements&nbsp;two&nbsp;the&nbsp;objects&nbsp;adjacent&nbsp;list<br>
+&nbsp;<br>
+:param&nbsp;list:&nbsp;list&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;<a href="#Node">Node</a>&nbsp;neighbours<br>
+:return:&nbsp;returns&nbsp;nothing</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Gui_Print_Path"><strong>Gui_Print_Path</strong></a>(endNode, frame, end_time, request_time)</dt><dd><tt>creates&nbsp;gui&nbsp;elements&nbsp;based&nbsp;on&nbsp;the&nbsp;path&nbsp;to&nbsp;the&nbsp;endNode<br>
+&nbsp;<br>
+:param&nbsp;endNode:&nbsp;the&nbsp;searched&nbsp;node<br>
+:param&nbsp;frame:&nbsp;the&nbsp;parent&nbsp;gui&nbsp;element<br>
+:param&nbsp;end_time:&nbsp;the&nbsp;time&nbsp;taken&nbsp;to&nbsp;search&nbsp;for&nbsp;a&nbsp;path<br>
+:param&nbsp;request_time:&nbsp;the&nbsp;time&nbsp;taken&nbsp;for&nbsp;the&nbsp;Wikipedia&nbsp;API&nbsp;to&nbsp;return&nbsp;results<br>
+:return:&nbsp;returns&nbsp;nothing</tt></dd></dl>
+ <dl><dt><a name="-Print_Path"><strong>Print_Path</strong></a>(endNode)</dt><dd><tt>prints&nbsp;the&nbsp;path&nbsp;in&nbsp;the&nbsp;console<br>
+&nbsp;<br>
+:param&nbsp;endNode:&nbsp;the&nbsp;searched&nbsp;node<br>
+:return:&nbsp;returns&nbsp;nothing</tt></dd></dl>
+ <dl><dt><a name="-callback"><strong>callback</strong></a>(event)</dt><dd><tt>creates&nbsp;a&nbsp;link&nbsp;to&nbsp;the&nbsp;wikipedia&nbsp;page&nbsp;with&nbsp;the&nbsp;passed&nbsp;pageid<br>
+&nbsp;<br>
+:param&nbsp;event:<br>
+:return:&nbsp;creates&nbsp;a&nbsp;link&nbsp;to&nbsp;the&nbsp;url</tt></dd></dl>
+ <dl><dt><a name="-deep_search"><strong>deep_search</strong></a>(needles, haystack)</dt><dd><tt>searches&nbsp;json/dictionary&nbsp;for&nbsp;a&nbsp;key<br>
+&nbsp;<br>
+:param&nbsp;needles:&nbsp;the&nbsp;key<br>
+:param&nbsp;haystack:&nbsp;the&nbsp;json&nbsp;or&nbsp;dictionary<br>
+:return:&nbsp;the&nbsp;value&nbsp;for&nbsp;the&nbsp;given&nbsp;key</tt></dd></dl>
+ <dl><dt><a name="-query"><strong>query</strong></a>(request)</dt><dd><tt>creates&nbsp;a&nbsp;query&nbsp;and&nbsp;sends&nbsp;it&nbsp;to&nbsp;the&nbsp;Wikipedia&nbsp;API&nbsp;using&nbsp;the&nbsp;requests&nbsp;module.&nbsp;Yields&nbsp;the&nbsp;results&nbsp;from&nbsp;the&nbsp;Wikipedia&nbsp;API<br>
+&nbsp;<br>
+:param&nbsp;request:&nbsp;A&nbsp;string&nbsp;request&nbsp;to&nbsp;the&nbsp;Wikipedia&nbsp;API<br>
+:return:&nbsp;the&nbsp;result&nbsp;from&nbsp;the&nbsp;Wikipedia&nbsp;API</tt></dd></dl>
+</td></tr></table>
+</body></html>
