@@ -28,11 +28,12 @@ def BFS(start, end, frame=None):
             if int(label.grid_info()["row"]) > 1:
                 label.grid_forget()
 
+    #check if start and destination titles match a wikipedia page
     for result in query({'titles': start}):
         c1=len(deep_search("pageid", result))
     for result in query({'titles': end}):
         c2=len(deep_search("pageid", result))
-    if (c1+c2) == 2:
+    if (c1+c2) == 2:    #if they match continue the search
 
         request_time = 0.0
         start_time = time.time()
@@ -79,7 +80,7 @@ def BFS(start, end, frame=None):
                         return True
 
             u.color = 'black'
-    else:
+    else:   #if they don't match generate an error box
         node1 = tkinter.LabelFrame(frame, width=30)
         # node1.grid_columnconfigure(0, weight=1, uniform="fred")
         node1.grid(row=4, column=0)
