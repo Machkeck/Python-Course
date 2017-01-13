@@ -1,8 +1,0 @@
--Kubuœ Puchatek -> Adolf Hitler
--Harry Potter -> Albert Einstein
--Harry Potter -> Cho Chang
--Python -> Kalifornia
--Python -> Monty Python
--Python -> Polska
--Jerozolima -> Google
--Pierogi -> Jerozolima	
