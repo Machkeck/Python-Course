@@ -21,54 +21,70 @@ def BFS(start, end, frame=None):
     :param frame: the parent gui element
     :return: returns True when the destination title is found
     """
-    request_time = 0.0
-    start_time = time.time()
-    if frame!= None: #clear the previous path
+
+
+    if frame != None:  # clear the previous path
         for label in frame.grid_slaves():
             if int(label.grid_info()["row"]) > 1:
                 label.grid_forget()
-    ListOfNames=[]
-    Q = Queue()
-    s = Node(start,'grey',0,None)
-    ListOfNames.append(start)
-    Q.put(s)
-    while not Q.empty():
-        u = Q.get()
-        t1 = time.time()
-        for result in query({'titles': u.name, 'prop': 'links', 'pllimit': '500'}):
-            request_time += time.time()-t1
-            L = deep_search('links',result)
-            #print(L)
 
-            try:
-                u.pageid = deep_search("pageid", result)['pageid']
-                u.addAdjacentList(L['links'])
-            except KeyError:#in case of redlinks
-                print(L, u.name)
+    for result in query({'titles': start}):
+        c1=len(deep_search("pageid", result))
+    for result in query({'titles': end}):
+        c2=len(deep_search("pageid", result))
+    if (c1+c2) == 2:
+
+        request_time = 0.0
+        start_time = time.time()
+
+        ListOfNames=[]
+        Q = Queue()
+        s = Node(start,'grey',0,None)
+        ListOfNames.append(start)
+        Q.put(s)
+        while not Q.empty():
+            u = Q.get()
             t1 = time.time()
-        for item in u.adjacent:
-            nname = deep_search('title',item)['title']
-            #print(nname)
-            if nname not in ListOfNames:
-                ListOfNames.append(nname)
-                v = Node(nname,'grey',u.dist+1,u)
-                Q.put(v)
-                if nname==end:
-                    print("way found")
-                    print(nname)
-                    t1=time.time()
-                    for result in query({'titles': nname}):
-                        request_time+=time.time()-t1
-                        v.pageid = deep_search("pageid", result)['pageid']
-                    end_time = time.time() - start_time
-                    if(frame==None):
-                        Print_Path(v)
-                        print(end_time,request_time)
-                    else:
-                        Gui_Print_Path(v,frame, end_time, request_time)
-                    return True
+            for result in query({'titles': u.name, 'prop': 'links', 'pllimit': '500'}):
+                request_time += time.time()-t1
+                L = deep_search('links',result)
+                #print(L)
 
-        u.color = 'black'
+                try:
+                    u.pageid = deep_search("pageid", result)['pageid']
+                    u.addAdjacentList(L['links'])
+                except KeyError:#in case of redlinks
+                    print(L, u.name)
+                t1 = time.time()
+            for item in u.adjacent:
+                nname = deep_search('title',item)['title']
+                #print(nname)
+                if nname not in ListOfNames:
+                    ListOfNames.append(nname)
+                    v = Node(nname,'grey',u.dist+1,u)
+                    Q.put(v)
+                    if nname==end:
+                        print("way found")
+                        print(nname)
+                        t1=time.time()
+                        for result in query({'titles': nname}):
+                            request_time+=time.time()-t1
+                            v.pageid = deep_search("pageid", result)['pageid']
+                        end_time = time.time() - start_time
+                        if(frame==None):
+                            Print_Path(v)
+                            print(end_time,request_time)
+                        else:
+                            Gui_Print_Path(v,frame, end_time, request_time)
+                        return True
+
+            u.color = 'black'
+    else:
+        node1 = tkinter.LabelFrame(frame, width=30)
+        # node1.grid_columnconfigure(0, weight=1, uniform="fred")
+        node1.grid(row=4, column=0)
+        label = tkinter.Label(node1, text="Incorrect page title: "+("start " if c1==0 else "")+("destination" if c2==0 else ""))
+        label.pack()
 
 def Run_Gui():
     """
