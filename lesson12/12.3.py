@@ -49,8 +49,10 @@ print("L = "+str(L))
 print("L sorted = "+str(sorted(L)))
 print("Mediana[0,9] = "+str(mediana_sort(L,0,len(L)-1)))
 
-#L = [3,25,4,2]
-#M = sorted(L)
-#print(L)
-#print(M)
-#print(mediana_sort(L,0,len(L)-1))
+print("")
+
+L = [3,25,4,2]
+M = sorted(L)
+print("L = "+str(L))
+print("L sorted = "+str(M))
+print("L mediana should be: (3, 4) | function returns: "+str(mediana_sort(L,0,len(L)-1)))
