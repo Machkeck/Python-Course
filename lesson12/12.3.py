@@ -38,9 +38,9 @@ print("Mediana[2,7] = "+str(mediana_sort(L,2,7)))
 print("Mediana[2,29] = "+str(mediana_sort(L,2,29)))
 print("Mediana[-1,19] = "+str(mediana_sort(L,-1,19)))
 try:
-    print("Mediana[-1,19] = " + str(mediana_sort(L, 3, 2)))
+    print("Mediana[3,2] = " + str(mediana_sort(L, 3, 2)))
 except ValueError:
-    print("left index greater than right index")
+    print("Mediana[3,2] = left index greater than right index")
 
 print("")
 
